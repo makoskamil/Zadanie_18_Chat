@@ -1,5 +1,5 @@
 {
-  "name": "NPM",
+  "name": "Chat",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,8 @@
     "init-project": "npm install && npm run init:dirs && npm run init:files && npm run init:gitignore",
     "init:dirs": "mkdirp sass css vendor images js",
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
-    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore"
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "set NODE_ENV=production&webpack",
   },
   "keywords": [],
   "author": "",
