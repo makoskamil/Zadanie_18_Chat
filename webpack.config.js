@@ -1,10 +1,16 @@
 const path = require('path');
 
+const env = process.env.NODE_ENV || 'development';
+
 module.exports = {
-    entry: './src/index.js',
+    entry: (env !== 'production' ? [
+        'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:8080',
+        'webpack/hot/only-dev-server',
+    ] : []).concat(['./client/index.js']),
     output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
+        filename: './bundle.js',
+        path: path.resolve(__dirname, 'public'),
     },
     module: {
         rules: [
